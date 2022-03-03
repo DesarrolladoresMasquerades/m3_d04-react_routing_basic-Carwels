@@ -14,6 +14,18 @@ function App() {
     <div className="App">
       <Navbar />
 
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+
+        <Route exact path="/protected" element={< HomePageWithRedirect authorised={true} />} />
+
+        <Route exact path="/about" element={<AboutPage />} />
+
+        <Route exact path="/projects" element={<ProjectsPage projects={projectsData} />} />
+
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+
     </div>
   );
 }
